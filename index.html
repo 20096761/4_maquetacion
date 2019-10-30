@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Maquetación</title>
+        <style type="text/css">
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            html{
+                height: 100%;
+            }
+            body{
+                font-size: 16px;
+            }
+            header{
+                display: flex;
+            }
+            img{
+                width: 100%;
+            }
+            section{
+                width: 50%;
+                height: 70vh;
+                object-fit: cover;
+            }
+            header section:first-child{
+                float: left;
+                position: relative;
+                background: blue;
+            }
+            header section:first-child img{
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+            header section:last-child{
+                object-fit: cover;
+                float: right;
+                position: relative;
+                background: red;
+            }
+            header section:last-child img{
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+            h1{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                font-size: 4vw;  
+                font-family: 'Georgia', cursive;
+                color: white;
+            }
+            main{
+                width: 600px;
+                margin: auto;
+                font-family: monospace;
+            }
+            main>p{
+                padding: 4em 0;
+                color: greenyellow;
+                column-count: 2;
+                column-gap: 30px;
+            /* Para tener una línea separatoria en medio de las columnas. */
+                column-rule: 1px solid greenyellow;
+                text-align: justify;
+                hyphens: auto;
+            }
+            article{
+                padding: 0 4em;
+                color: gray;
+            }
+            article p{
+/* Para dejar espacio entre el párrafo del artículo y el párrafo introductorio. */
+                margin: 0 0 1.2em 0;
+            }
+/* Para ponerle características a la primera letra de un párrafo. */
+            article p:first-child::first-letter{
+                font-family: 'Georgia', cursive;
+                color: greenyellow;
+                font-size: 8em;
+                float: left;
+/* Gastaremos rem para que el espacio se ajuste al tamaño de la letra inicial; es decir; se hará relativa al em del font-size que hay anteriormente. */
+                line-height: 1rem;
+                padding-right: 0.5rem;
+                padding-left: 0.5rem;
+                padding-bottom: 2rem;
+                padding-top: 2rem;
+            }
+/* Para recortar una imagen con una forma circular. */
+            .cercle{
+                background: beige;
+                border-radius: 50%;
+                shape-outside: circle(50%) border-box;
+                float: right;
+                max-width: 20em;
+                margin-right: -8em;
+                shape-margin: 0.4em;
+            }
+/* border-box sirve para que el texto se ajuste al borde de la imagen que se ha colocado y siga su contorno. */
+            article .cercle img{
+/* Para que la imagen sea del color del fondo con el que estamos maquetando. */
+                mix-blend-mode: hard-light;
+                border-radius: 50%;
+                shape-outside: circle(50%);
+            }
+/* Para recortar una imagen con una forma poligonal. (mirar en clip path de bennettfeely) */
+            .hexagon{
+                background: beige;
+                float: left;
+                max-width: 18em;
+                margin-left: -5em;
+                margin-right: 0.5em;
+                shape-margin: 0.4em;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                shape-outside: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%) border-box;
+            }
+            .hexagon img{
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                shape-outside: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            }
+            @media(max-width:600px){
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <section>
+                <img src='img/Savignac.jpg' alt="">
+                <h1> Raymond Savignac <br> Graphic designer </h1>
+            </section>
+            <section>
+                <h1> Massimo Vignelli <br> Graphic designer </h1>
+                <img src='img/VIGNELLI.jpg' alt="">
+            </section>
+        </header>
+        <main>
+            <p>Raymond Savignac, conocido comúnmente como Savignac, fue un célebre cartelista francés. Creó innumerables carteles publicitarios que forman ahora parte del patrimonio cultural francés.
+            Sus obras se caracterizan por simplicidad eficacia y un toque de humor, creados totalmente a mano e incluso la tipografía. La retórica formal se repite a lo largo de su obra, figuras simples sobre fondos casi vacíos. Grandes manchas de colores planos, influido por el fauvismo, de hecho incluso las figuras, humanas o no, que diseñaban tienen colores inverosímiles, rojos, azules, naranjas... Sus trabajos también cuentan con buena dosis de surrealismo, al estilo de René Magritte.Artista autodidacta, comenzó su carrera de cartelista en 1935, en la Alliance Graphique bajo la tutela de Cassandre. Pero fue en 1949 cuando le llegó un gran éxito gracias a una famosa campaña publicitaria para los jabones Monsavon au lait.
+            </p>
+            <article>
+                <p>Comienza en la compañia de transportes parisienses como dibujante aprendiz, toma clases de dibujo industrial en la noche. Trabaja con Robert Lortac en el año 1925 realizador de los dibujos animados para anuncios cinematograficos y copia los carteles de profesionales reconocidos tales como Cassandre, Loupot, Colin y Carlu para introducirlos en las peliculas publicitarias. El conocimiento de estas obras lo lleva a interesarse por el cartel y convertirse en cartelista.
+                </p>
+                <p>Sus obras se caracterizan por la simplicidad y el buen humor, creados totalmente a mano incluso las tipografias. Grandes manchas de colores planos, influido por el fauvismo incluso las figuras, humanas o no, que diseñaban tienen colores inverosimiles rojos, azules, naranjas....
+                </p>
+                <div class="cercle">
+                    <img src="img/savignac%201.jpg" alt="obra1">
+                </div>
+                <p>En el año 1933 visita a Cassandre e inseguro por lo que puede lograr le pide opinion sobre sus habilidades como dibujante publicitario. La respuesta fue clara y le pidio que le hiciera un cartel y un folleto y lo invito a trabajar en el año 1935 para la Alliance Graphique, el estudio que había fundado con Loupot y Maurice Moyrand que, por aquel entonces, destacaba en el panorama publicitario francés por ser un artista autodidacta.
+                </p>
+                <p>Tras la marcha de Cassandre a Estados Unidos en 1938, entra como dibujante-maquetista en la imprenta Draeger Frères donde permanecio hasta el estallido de la Segunda Guerra Mundial. Era un período difícil porque se sentia limitado. Después de haber disfrutado toda la libertad creativa junto a Cassandre, ahora tenia la sensación de encontrarse más en un cuartel que en un taller de creación. Sus propuestas se rechazaron o cuando se acepto sufre tantos cambios que dejan de parecerse a la idea original.
+                </p>
+                <p>En el año 1949 cuando llegó un gran éxito gracias a una famosa campaña publicitaria para los jabones Monsavon au lait. Hizo trabajos para las mayores empresas francesas, como Air France, Perrier, Vichi, Bic, Citroën...
+                </p>
+                <p>Desde ese momento, recibió premios, participo en exposiciones y se publicaron sus trabajos en las revistas especializadas de referencia. Entre sus clientes se encuentran Bic, Maggi, Mobiloil, Vespa, Yoplait, Air France, Pirelli, BP (British Petroleum) , Citroen, Michelin, Cinzano, Dunlop, Life, Paris-Match y un largo trabajo con empresas grandes.
+                </p>                
+                <div class="hexagon">
+                    <img src="img/massimo%201.jpg" alt="obra1">
+                </div>
+                <p>Sus carteles se describen como estilo revolucionario, en palabras del Art Directors club de Nueva York (1956). En el año de 1970 el cartel comercial se encontró en declive, y fue desplazado por la televisión y en la fotografía iba ocupando el lugar que antes tuvo la ilustración.
+                </p>
+                <p>Desconcertado por la baja demanda y en el número de encargos cartelisticos, Savignac comenzó en el año 1971 comenzo una nueva aventura, expresar su visión de la sociedad contemporánea a través de un portafolio titulado 'Savignac Défense d afficher', en el que se mostró muy crítico con lo que considera un mundo cada vez más mecánico y deshumanizado.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
